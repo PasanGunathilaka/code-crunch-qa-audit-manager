@@ -8,7 +8,9 @@
   "dependencies": {
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
+    "@types/chart.js": "^2.9.41",
     "autoprefixer": "10.4.17",
+    "chart.js": "^4.4.2",
     "geist": "^1.2.1",
     "next": "latest",
     "postcss": "8.4.33",

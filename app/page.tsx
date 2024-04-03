@@ -13,7 +13,7 @@ export default async function Index() {
     .from("QualityAuditList")
     .select();
   console.log("data", QualityAuditList);
-  
+
   // useEffect(() => {
   //   fetchAudits();
   // }, []);
@@ -23,5 +23,9 @@ export default async function Index() {
   //   setAuditList(data);
   // }
 
-  return<><Home/></>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
