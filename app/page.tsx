@@ -7,13 +7,27 @@ import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
 import Header from "@/components/Header";
 import { createClient } from "@/utils/supabase/client";
 import Home from "@/components/home";
- 
+import { redirect } from "next/navigation";
 export default async function Index() {
   const supabase = createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const { data: QualityAuditList } = await supabase
     .from("QualityAuditList")
-    .select("*");
-    console.log("data",QualityAuditList);
+    .select();
+
+
+    if (!user) {
+      return redirect("/login");
+    }
+  
+ 
+  
+
+  console.log("data", QualityAuditList);
   
   // useEffect(() => {
   //   fetchAudits();
@@ -24,5 +38,5 @@ export default async function Index() {
   //   setAuditList(data);
   // }
 
-  return<><Home/></>;
+  // return<><Home/></>;
 }
